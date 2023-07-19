@@ -37,8 +37,10 @@ const caeserCipher1 = (text, shift) => {
 		let currentIndex = alphabets.indexOf(currentLetter);
 		currentIndex;
 		let newIndex = currentIndex + shift;
+		
 		if (newIndex > 25) newIndex = newIndex - 26;
 		if (newIndex < 0) newIndex = newIndex + 26;
+		
 		if (text[index] === text[index].toUpperCase()) {
 			newString = `${newString}${alphabet[
 				newIndex
