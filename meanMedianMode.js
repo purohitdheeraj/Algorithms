@@ -56,6 +56,6 @@ function findMeanMedianMode(arr) {
 	};
 }
 
-const arr = [];
+const arr = [1,2,3,4,4,5,6,7,8];
 
 console.log(findMeanMedianMode(arr));

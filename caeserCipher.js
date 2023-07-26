@@ -35,7 +35,7 @@ const caeserCipher1 = (text, shift) => {
 			continue; // move with next iteration
 		}
 		let currentIndex = alphabets.indexOf(currentLetter);
-		currentIndex;
+
 		let newIndex = currentIndex + shift;
 		
 		if (newIndex > 25) newIndex = newIndex - 26;
