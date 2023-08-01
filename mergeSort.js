@@ -1,25 +1,33 @@
-const mergeSort = (arr) => {
-	if(arr.length < 2) return arr
-	let middleIndex = Math.floor(arr.length / 2)
-	const arr1 = arr.slice(0, middleIndex)
-	const arr2 = arr.slice(middleIndex)
+// mergeSort -> divide the arr in 2 half
+// merge -> takes 2 arr and merge into one and return 
 
-};
+function mergeSort(array){
+	// base case -> [0] [1]
+	if(array.length < 2) return array;
+	let middleIndex = Math.floor(array.length / 2)
+	let firstHalf = array.slice(0, middleIndex)
+	let secondHalf = array.slice(middleIndex)
+	// divide the array and pass
+	array
+	return merge(mergeSort(firstHalf), mergeSort(secondHalf))
+}
 
-const merge = (arr1, arr2) => {
-	const mergedArr = [];
-	for(let i=0; i<arr1.length; i++){
-		if(arr1[i] > arr2[i]){
-			mergedArr[i] = arr1.shift()
+function merge(array1, array2){
+	let result = []
+	while(array1.length && array2.length){
+		let minElement;
+		if(array1[0] < array2[0]){
+			minElement = array1.shift()
 		}else{
-			mergedArr[i] = arr2.shift()
+			minElement = array2.shift()
 		}
-		if(arr2.length){
-			mergedArr.push(...arr2)
-		}
+		result.push(minElement)
 	}
+	result
+	if(array1.length) result =  result.concat(array1)
+	else result = result.concat(array2)
+	return result
+}
 
-	return mergedArr;
-};
 
-
+console.log(mergeSort([11,2,43,9,33,22,44,32,11]))
