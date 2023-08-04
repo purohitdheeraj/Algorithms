@@ -1,7 +1,6 @@
 // 1, 1, 2, 3, 5, 8, 13, 21, 34
 
 // time complexity (O(2^n))
-
 function fibonacci(position) {
 	if (position < 3) return 1;
 	else {
@@ -16,9 +15,10 @@ function fibonacci(position) {
 
 function fibMemo(index, cache) {
 	cache = cache || [];
+
 	if (cache[index]) return cache[index];
 	else {
-		if (index < 3) return BigInt(1);
+		if (index < 3) return 1;
 		else {
 			cache[index] =
 				fibMemo(index - 1, cache) +
@@ -28,5 +28,5 @@ function fibMemo(index, cache) {
 	return cache[index];
 }
 
-let index = 7823;
-// console.log(fibMemo(BigInt(index).toString()));
+let index = 3;
+console.log(fibMemo(index.toString()));
