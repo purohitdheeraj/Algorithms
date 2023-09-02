@@ -14,7 +14,8 @@ function mergeOverlappingIntervals(intervals) {
 			mergedIntervals[mergedIntervals.length - 1];
 		let isOverlapped =
 			currentInterval.start <= latestMergedInterval.end;
-		if (isOverlapped) {
+
+			if (isOverlapped) {
 			latestMergedInterval.end = Math.max(
 				currentInterval.end,
 				latestMergedInterval.end
