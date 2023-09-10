@@ -56,7 +56,7 @@ pubSub.subscribe("click", cb2);
 
 // pubSub.unsubscribe('click', cb2)
 
-pubSub.publish('click', "hare krishna")
+pubSub.publish("click", "hare krishna");
 
 console.log(pubSub.subscribers);
 console.log(pubSub.published);
